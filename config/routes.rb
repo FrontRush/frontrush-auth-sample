@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "sessions#welcome"
   get 'sessions/create'
 
   get 'sessions/welcome'
