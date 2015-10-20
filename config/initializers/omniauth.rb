@@ -1,3 +1,5 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-	provider :frontrush, consumer_key: 'key3', consumer_secret: 'secret3', frontrush_url: 'http://frontrushtest.dyndns.org/FRConnectServices', setup: true
+       #This points to the frontrush staging server
+	provider :frontrush, consumer_key: 'fake_key', consumer_secret: 'fake_secret', frontrush_url: 'http://frontrushtest.dyndns.org/FRConnectServices', setup: true
 end	
+
