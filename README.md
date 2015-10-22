@@ -110,6 +110,7 @@ These are General fields and are hard-coded. First Name and Last Name are requir
 **Required**
 First Name / Last Name
 
+Fields you can send...
 - **FirstName, LastName** *varchar(50)*
 - **EmailAddress** *varchar(100)*
 - **CellPhone, ContactNumber** *varchar(20). You can send periods, parenthesis, etc. but best to just send numbers.*
@@ -121,9 +122,10 @@ First Name / Last Name
 ####Custom
 This is where you send the other stuff like height, weight, favorite movie, etc...really whatever you want. They are all varchar(100) except for the LogoPath and Profile on 3rd Party Site which are varchar(500)
 
-**red**
+**Required**
 LogoPath, Site Name, PartnerID
 
+Fields you can send...
 - **LogoPath** the location of your logo. If you want to send us a logo, we can give you a path that you can reference.
 - **Site Name** Provided to you
 - **Profile on 3rd Party Site** link back to the athletes profile 
@@ -137,6 +139,7 @@ This is where you can pass videos of the athletes. All fields are varchar(250).
 **Required**
 VideoTitle, TimeOf, VideoLink, OutsideSource, VideoImageLogo, VideoSiteURL, VideoLocation, ThirdPartyID, PartnerID
 
+Fields you can send...
 - **VideoTitle** title of the video.
 - **TimeOf** time stamp of the video.
 - **VideoLink** the URL to the raw video (must be mp4).
@@ -153,6 +156,7 @@ This is where you can pass notes on the athlete that the coach took.
 **Required**
 NotedID, NoteDate, NoteType, NoteBody
 
+Fields you can send...
 - **NoteID** a unique ID that you would pass with the note so that if the note is edited in your site then it will update in Front Rush.
 - **NoteDate** the date of the note format be like 2015-10-13 20:16:26
 - **NoteType** always will be "General"
@@ -163,6 +167,7 @@ NotedID, NoteDate, NoteType, NoteBody
 **Required**
 SportID
 
+Fields you can send...
 - **SportID** the ID for the sport that you get from the omniauth callback
 - **SportName** the Name for the sport that you get from the omniauth callback
 
