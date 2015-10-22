@@ -57,6 +57,7 @@ You will need a view to link to the Front Rush login.
 ```  
 
 ###auth_hash
+The service will return an auth_hash with relevant info about the user.
 - **oauth_token** the token you will use for posting athlete data to Front Rush.
 - **Email** the coach's email address in Front Rush.
 - **Sports** an array that includes the sport info for the coach. A coach may have access to multiple sports so this is can be used for presenting a drop-down for the coach to choose which sport they would like to post data to.
