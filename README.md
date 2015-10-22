@@ -97,4 +97,7 @@ When posting data to Front Rush, you will post to the below address and include 
     return response
   end
   ```
+  
+![alt text](http://g.recordit.co/YfExOq3YJ3.gif "Oauth Flow")
+
 
