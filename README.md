@@ -6,7 +6,7 @@ This is a simple rails app that uses the Front Rush Omniauth Gem https://rubygem
 
 
 ## Front Rush Omniauth
-This uses Front Rush Omniauth which is a library for authorizing coaches through Front Rush and then posting recruit data to the respective coaches account in Front Rush. We have implemented an omniauth gem based upon https://github.com/intridea/omniauth. The documentation is nearly identical with the exception of the OmniAuth callback (outlined below) and the request for posting to Front Rush which does exist in Omniauth. Another implementation example can be found at http://railscasts.com/episodes/241-simple-omniauth?view=asciicast.
+This uses Front Rush Omniauth which is a library for authorizing coaches through Front Rush and then posting recruit data to the respective coaches account in Front Rush. We have implemented an omniauth gem based upon https://github.com/intridea/omniauth. The documentation is nearly identical with the exception of the OmniAuth callback (outlined below) and the request for posting to Front Rush which does not exist in Omniauth. Another implementation example can be found at http://railscasts.com/episodes/241-simple-omniauth?view=asciicast.
 
 ## Implementation
 
