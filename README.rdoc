@@ -5,6 +5,7 @@ To implement...
 
 Add the omniauth gem to your Gemfile.
 Gemfile
+
 gem 'omniauth-frontrush'
 
 Create an omniauth initializer and include your consumer_key and consumer_secret that we will provide to you.
