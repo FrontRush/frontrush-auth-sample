@@ -57,20 +57,13 @@ You will need a view to link to the Front Rush login.
 ```  
 
 **auth_hash**
-
-*oauth_token:* the token you will use for posting athlete data to Front Rush.
-
-*Email:* the coach's email address in Front Rush.
-
-*Sports:* an array that includes the sport info for the coach. A coach may have access to multiple sports so this is can be used for presenting a drop-down for the coach to choose which sport they would like to post data to.
-
-*SportName:* the name of the sport that the coach has access to in Front Rush. This is customizable by the coach.
-
-*SportID:* the id for the sport that you will use later when posting json to Front Rush.
-
-*University:* university info for that Coach.
-
-*provider:* this will be "frontrush"
+- **oauth_token** the token you will use for posting athlete data to Front Rush.
+- **Email** the coach's email address in Front Rush.
+- **Sports** an array that includes the sport info for the coach. A coach may have access to multiple sports so this is can be used for presenting a drop-down for the coach to choose which sport they would like to post data to.
+- **SportName** the name of the sport that the coach has access to in Front Rush. This is customizable by the coach.
+- **SportID** the id for the sport that you will use later when posting json to Front Rush.
+- **University** university info for that Coach.
+- **provider** this will be "frontrush"
 
 
   ```
