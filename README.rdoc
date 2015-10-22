@@ -1,7 +1,9 @@
-This is an Outh2 library for authorizing coaches through Front Rush and then posting recruit data to the respective coaches account in Front Rush. We have implemented an omniauth gem based upon https://github.com/intridea/omniauth. The documentation is nearly identical with the exception of the OmniAuth callback (outlined below) and the request for posting to Front Rush which does exist in Omniauth. Another implementation example can be found at http://railscasts.com/episodes/241-simple-omniauth?view=asciicast...and a really simple implementation with the frontrush-omniauth here https://github.com/FrontRush/frontrush-auth-sample
+## Overview
+
+This is an Outh2 library for authorizing coaches through Front Rush and then posting recruit data to the respective coaches account in Front Rush. We have implemented an omniauth gem based upon https://github.com/intridea/omniauth. The documentation is nearly identical with the exception of the OmniAuth callback (outlined below) and the request for posting to Front Rush which does exist in Omniauth. Another implementation example can be found at http://railscasts.com/episodes/241-simple-omniauth?view=asciicast.
 
 
-*Implementation*
+##Implementation
 
 Add the omniauth gem to your Gemfile.
   Gemfile
@@ -51,6 +53,8 @@ You will need a view to link to the Front Rush login.
 
   auth_hash =
   <OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash oauth_token="fake_oauth_token" oauth_token_secret="fake_oauth_token"> extra=#<OmniAuth::AuthHash Email="coach@university.edu" Sports=[#<OmniAuth::AuthHash SportName="Baseball" SportID="123">, #<OmniAuth::AuthHash SportName="Football" SportID="1234">, #<OmniAuth::AuthHash SportName="Soccer" SportID="1235">] Token="fake_token" TokenSecret="fake_token" University=#<OmniAuth::AuthHash UniversityName="University"> info=#<OmniAuth::AuthHash::InfoHash> provider="frontrush" uid="coach@coach.edu">
+  
+#Posting to Front Rush
 
 When posting data to Front Rush, you will post to the below address and include your consumer_key and oauth_token
   url = https://frontrush.com/FRConnectServices/athlete/recruit/send/profile?oauth_consumer_key='+ENV['consumer_key']+'&oauth_token='+session[:token]
