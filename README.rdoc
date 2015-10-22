@@ -6,13 +6,13 @@ To implement...
 Add the omniauth gem to your Gemfile.
 Gemfile
 
-gem 'omniauth-frontrush'
+  gem 'omniauth-frontrush'
 
 Create an omniauth initializer and include your consumer_key and consumer_secret that we will provide to you.
 config/initializers/omniauth.rb
-Rails.application.config.middleware.use OmniAuth::Builder do
-  	provider :frontrush, consumer_key: 'fake_key', consumer_secret: 'fake_secret', frontrush_url: 'url provided by frontrush', setup: true
-end
+  Rails.application.config.middleware.use OmniAuth::Builder do
+  	provider :frontrush, consumer_key: 'fake_key', consumer_secret: 'fake_secret', frontrush_url: 'url provided by frontrush',   setup: true
+  end
 
 Create a route for the Front Rush callback.
 routes.rb
