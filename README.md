@@ -6,8 +6,11 @@ This is an Outh2 library for authorizing coaches through Front Rush and then pos
 ## Implementation
 
 Add the omniauth gem to your Gemfile.
+  ```
   Gemfile
+  
   gem 'omniauth-frontrush'
+  ```
 
 Create an omniauth initializer and include your consumer_key and consumer_secret that we will provide to you.
   ```config/initializers/omniauth.rb
@@ -17,12 +20,16 @@ Create an omniauth initializer and include your consumer_key and consumer_secret
   ```
 
 Create a route for the Front Rush callback.
+  ```
   routes.rb
+  
   get '/auth/:provider/callback', to: 'sessions#create'
+  ```
 
 Omniauth provides a callback as a hash with the relative data for the coach who is signing in. Below is an example using a Sessions controller.
 ```
   sessions_controller.rb
+  
   class SessionsController < ApplicationController
     def create
       @user = User.find_or_create_from_auth_hash(auth_hash)
@@ -43,6 +50,7 @@ Omniauth provides a callback as a hash with the relative data for the coach who 
 You will need a view to link to the Front Rush login.
 ```
   /app/views/layouts/application.html.erb
+  
   <div id="user_nav">
     <%= link_to "Sign in with Front Rush", "/auth/frontrush" %>
   </div>
@@ -62,7 +70,7 @@ You will need a view to link to the Front Rush login.
 
 *University:* university info for that Coach.
 
-*provider:* this will be frontrush
+*provider:* this will be "frontrush"
 
 
   ```
@@ -77,6 +85,7 @@ When posting data to Front Rush, you will post to the below address and include 
 ```
   ```
   example.rb
+  
   def post_json_to_frontrush(json_data)
     url ='https://frontrush.com/FRConnectServices/athlete/recruit/send/profile?oauth_consumer_key='+ENV['consumer_key']+'&oauth_token='+session[:token]
     uri = URI.parse(url)
