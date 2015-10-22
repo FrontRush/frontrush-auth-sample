@@ -4,23 +4,21 @@ This is an Outh2 library for authorizing coaches through Front Rush and then pos
 To implement...
 
 Add the omniauth gem to your Gemfile.
-Gemfile
-
+  Gemfile
   gem 'omniauth-frontrush'
 
 Create an omniauth initializer and include your consumer_key and consumer_secret that we will provide to you.
-config/initializers/omniauth.rb
+  config/initializers/omniauth.rb
   Rails.application.config.middleware.use OmniAuth::Builder do
     provider :frontrush, consumer_key: 'fake_key', consumer_secret: 'fake_secret', frontrush_url: 'url provided by frontrush',   setup: true
   end
 
 Create a route for the Front Rush callback.
-routes.rb
+  routes.rb
   get '/auth/:provider/callback', to: 'sessions#create'
 
 Omniauth provides a callback as a hash with the relative data for the coach who is signing in. Below is an example using a Sessions controller.
-
-sessions_controller.rb
+  sessions_controller.rb
   class SessionsController < ApplicationController
     def create
       @user = User.find_or_create_from_auth_hash(auth_hash)
@@ -37,10 +35,10 @@ sessions_controller.rb
 end
 
 You will need a view to link to the Front Rush login. 
-/app/views/layouts/application.html.erb
-<div id="user_nav">
-  <%= link_to "Sign in with Front Rush", "/auth/frontrush" %>
-</div>
+  /app/views/layouts/application.html.erb
+  <div id="user_nav">
+    <%= link_to "Sign in with Front Rush", "/auth/frontrush" %>
+  </div>
 
 auth_hash
 oauth_token: the token you will use for posting athlete data to Front Rush.
@@ -51,28 +49,28 @@ SportID: the id for the sport that you will use later when posting json to Front
 University: university info for that Coach.
 provider: this will be frontrush
 
-auth_hash =
-<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash oauth_token="fake_oauth_token" oauth_token_secret="fake_oauth_token"> extra=#<OmniAuth::AuthHash Email="coach@university.edu" Sports=[#<OmniAuth::AuthHash SportName="Baseball" SportID="123">, #<OmniAuth::AuthHash Sp
+  auth_hash =
+  <OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash oauth_token="fake_oauth_token" oauth_token_secret="fake_oauth_token"> extra=#<OmniAuth::AuthHash Email="coach@university.edu" Sports=[#<OmniAuth::AuthHash SportName="Baseball" SportID="123">, #<OmniAuth::AuthHash Sp
 ortName="Football" SportID="1234">, #<OmniAuth::AuthHash SportName="Soccer" SportID="1235">] Token="fake_token" TokenSecret="fake_token" University=#<OmniAuth::AuthHash UniversityName="University"> info=#<OmniAuth::AuthHash::InfoHash> provider="frontrush" uid="coach@coach.edu">
 
 When posting data to Front Rush, you will post to the below address and include your consumer_key and oauth_token
-url = https://frontrush.com/FRConnectServices/athlete/recruit/send/profile?oauth_consumer_key='+ENV['consumer_key']+'&oauth_token='+session[:token]
+  url = https://frontrush.com/FRConnectServices/athlete/recruit/send/profile?oauth_consumer_key='+ENV['consumer_key']+'&oauth_token='+session[:token]
 
-example.rb
-def post_json_to_frontrush(json_data)
-  url ='https://frontrush.com/FRConnectServices/athlete/recruit/send/profile?oauth_consumer_key='+ENV['consumer_key']+'&oauth_token='+session[:token]
-  uri = URI.parse(url)
-  make_post_request(uri,json_data)
-end
+  example.rb
+  def post_json_to_frontrush(json_data)
+    url ='https://frontrush.com/FRConnectServices/athlete/recruit/send/profile?oauth_consumer_key='+ENV['consumer_key']+'&oauth_token='+session[:token]
+    uri = URI.parse(url)
+    make_post_request(uri,json_data)
+  end
 
-def make_post_request(uri,json_data)
-  response = nil
-  Net::HTTP.start( uri.host,uri.port) { | http |
-    request = Net::HTTP::Post.new(uri.request_uri)
-    request["Content-Type"] = "text\plain"
-    request.body = json_data
-    response = http.request(request)
-  }
-  return response
-end
+  def make_post_request(uri,json_data)
+    response = nil
+    Net::HTTP.start( uri.host,uri.port) { | http |
+      request = Net::HTTP::Post.new(uri.request_uri)
+      request["Content-Type"] = "text\plain"
+      request.body = json_data
+      response = http.request(request)
+    }
+    return response
+  end
 
