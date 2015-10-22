@@ -108,10 +108,7 @@ When posting data to Front Rush, you will post to the below address and include 
 These are General fields and are hard-coded. First Name and Last Name are required and you can choose to include any/all of the others.
 
 **Required**
-
 First Name / Last Name
-
-**Fields that you can send**
 
 - **FirstName, LastName** *varchar(50)*
 - **EmailAddress** *varchar(100)*
@@ -124,8 +121,7 @@ First Name / Last Name
 ####Custom
 This is where you send the other stuff like height, weight, favorite movie, etc...really whatever you want. They are all varchar(100) except for the LogoPath and Profile on 3rd Party Site which are varchar(500)
 
-**Required**
-
+**red**
 LogoPath, Site Name, PartnerID
 
 - **LogoPath** the location of your logo. If you want to send us a logo, we can give you a path that you can reference.
@@ -139,7 +135,6 @@ LogoPath, Site Name, PartnerID
 This is where you can pass videos of the athletes. All fields are varchar(250). 
 
 **Required**
-
 VideoTitle, TimeOf, VideoLink, OutsideSource, VideoImageLogo, VideoSiteURL, VideoLocation, ThirdPartyID, PartnerID
 
 - **VideoTitle** title of the video.
@@ -156,7 +151,6 @@ VideoTitle, TimeOf, VideoLink, OutsideSource, VideoImageLogo, VideoSiteURL, Vide
 This is where you can pass notes on the athlete that the coach took.
 
 **Required**
-
 NotedID, NoteDate, NoteType, NoteBody
 
 - **NoteID** a unique ID that you would pass with the note so that if the note is edited in your site then it will update in Front Rush.
@@ -167,7 +161,6 @@ NotedID, NoteDate, NoteType, NoteBody
 ####Sports
 
 **Required**
-
 SportID
 
 - **SportID** the ID for the sport that you get from the omniauth callback
@@ -241,7 +234,7 @@ EXAMPLE JSON
                 "VideoTitle": "Laxachusetts Elite 2018 Green vs Common Goal 2018 Orange",
                 "TimeOf": "2015-07-18T14:00:00Z",
                 "VideoLink": "https://s3-us-west-1.amazonaws.com/2015-capitalcup/752.mp4",
-                "OutsideSource": "CoachPacket",
+                "OutsideSource": "YourSite",
                 "VideoImageLogo": "/your_logo.png",
                 "VideoSiteURL": "http://localhost:3010/showcases/3015/athletes/1080507",
                 "VideoLocation": "12RC",
@@ -322,7 +315,7 @@ EXAMPLE JSON
                 "VideoTitle": "Dolphins 2017 vs Long Island Top Guns 2017 Black",
                 "TimeOf": "2015-07-19T13:00:00Z",
                 "VideoLink": "https://s3-us-west-1.amazonaws.com/2015-capitalcup/296.mp4",
-                "OutsideSource": "CoachPacket",
+                "OutsideSource": "YourSite",
                 "VideoImageLogo": "/your_logo.png",
                 "VideoSiteURL": "http://yoursite/players/2838",
                 "VideoLocation": "01RC",
