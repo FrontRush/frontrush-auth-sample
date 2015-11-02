@@ -26,7 +26,7 @@ Create an omniauth initializer and include your consumer_key and consumer_secret
 
 Create a route for the Front Rush callback.
   ```
-  *# routes.rb*
+  # routes.rb
   
   get '/auth/:provider/callback', to: 'sessions#create'
   ```
