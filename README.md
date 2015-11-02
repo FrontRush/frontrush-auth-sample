@@ -12,7 +12,7 @@ This uses Front Rush Omniauth which is a library for authorizing coaches through
 
 Add the omniauth gem to your Gemfile.
   ```
-  *# Gemfile*
+  # Gemfile
   
   gem 'omniauth-frontrush'
   ```
