@@ -6,7 +6,7 @@ This is a simple rails app that uses the Front Rush Omniauth Gem https://rubygem
 
 
 ## Front Rush Omniauth
-This uses Front Rush Omniauth which is a library for authorizing coaches through Front Rush and then posting recruit data to the respective coaches account in Front Rush. We have implemented an omniauth gem based upon https://github.com/intridea/omniauth. The documentation is nearly identical with the exception of the OmniAuth callback (outlined below) and the request for posting to Front Rush which does not exist in Omniauth. Another implementation example can be found at http://railscasts.com/episodes/241-simple-omniauth?view=asciicast.
+This uses Front Rush Omniauth which is a library for authorizing coaches through Front Rush and then posting recruit data to the respective coaches account in Front Rush. We have implemented an omniauth gem based upon https://github.com/intridea/omniauth. The documentation is nearly identical with the exception of the OmniAuth callback (outlined below) and the request for posting to Front Rush which does not exist in Omniauth. Another implementation example cane be found at http://railscasts.com/episodes/241-simple-omniauth?view=asciicast.
 
 ## Implementation
 
@@ -113,6 +113,7 @@ First Name / Last Name
 Fields you can send...
 - **FirstName, LastName** *varchar(50)*
 - **EmailAddress** *varchar(100)*
+- **EmailAddress2** *varchar(100). This is a second (optional) email address used for our matching algo to find duplicate records in Front Rush.*
 - **CellPhone, ContactNumber** *varchar(20). You can send periods, parenthesis, etc. but best to just send numbers.*
 - **Address1** *varchar(100)*
 - **City, Zip** *varchar(100)*
