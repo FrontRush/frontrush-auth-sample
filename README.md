@@ -61,7 +61,7 @@ You will need a view to link to the Front Rush login.
   </div>
 ```  
 
-###auth_hash
+### auth_hash
 The service will return an auth_hash with relevant info about the user.
 - **oauth_token** the token you will use for posting athlete data to Front Rush.
 - **Email** the coach's email address in Front Rush.
@@ -76,7 +76,7 @@ The service will return an auth_hash with relevant info about the user.
   auth_hash = <OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash oauth_token="fake_oauth_token" oauth_token_secret="fake_oauth_token"> extra=#<OmniAuth::AuthHash Email="coach@university.edu" Sports=[#<OmniAuth::AuthHash SportName="Baseball" SportID="123">, #<OmniAuth::AuthHash SportName="Football" SportID="1234">, #<OmniAuth::AuthHash SportName="Soccer" SportID="1235">] Token="fake_token" TokenSecret="fake_token" University=#<OmniAuth::AuthHash UniversityName="University"> info=#<OmniAuth::AuthHash::InfoHash> provider="frontrush" uid="coach@coach.edu">
   ```
   
-#Posting to Front Rush
+# Posting to Front Rush
 
 When posting data to Front Rush, you will post to the below address and include your consumer_key and oauth_token
   ```
@@ -103,8 +103,8 @@ When posting data to Front Rush, you will post to the below address and include 
   end
   ```
   
-###JSON Overview
-####General
+### JSON Overview
+#### General
 These are General fields and are hard-coded. First Name and Last Name are required and you can choose to include any/all of the others.
 
 **Required**
@@ -120,7 +120,7 @@ Fields you can send...
 - **State** *varchar(2)*
 - **GraduationYear** *int(4)*
 
-####Custom
+#### Custom
 This is where you send the other stuff like height, weight, favorite movie, etc...really whatever you want. They are all varchar(100) except for the LogoPath and Profile on 3rd Party Site which are varchar(500)
 
 **Required**
@@ -134,7 +134,7 @@ Fields you can send...
 - **anything else...**
 
 
-####VideoDetail
+#### VideoDetail
 This is where you can pass videos of the athletes. All fields are varchar(250). 
 
 **Required**
@@ -151,7 +151,7 @@ Fields you can send...
 - **ThirdPartyID** a unique ID for the video.
 - **PartnerID** provided to you
 
-####Notes
+#### Notes
 This is where you can pass notes on the athlete that the coach took.
 
 **Required**
@@ -163,7 +163,7 @@ Fields you can send...
 - **NoteType** always will be "General"
 - **NoteBody** is the body of the note and can be any length.
 
-####Sports
+#### Sports
 
 **Required**
 SportID
