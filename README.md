@@ -1,4 +1,4 @@
-#Overview
+# Overview
 This is a simple rails app that uses the Front Rush Omniauth Gem https://rubygems.org/gems/omniauth-frontrush. To run this app, you just need to...
 
 1. update **config/initializers/omniauth.rb** with the corresponding credentials.
