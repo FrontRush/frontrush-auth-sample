@@ -76,13 +76,13 @@ The service will return an auth_hash with relevant info about the user.
   auth_hash = <OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash oauth_token="fake_oauth_token" oauth_token_secret="fake_oauth_token"> extra=#<OmniAuth::AuthHash Email="coach@university.edu" Sports=[#<OmniAuth::AuthHash SportName="Baseball" SportID="123">, #<OmniAuth::AuthHash SportName="Football" SportID="1234">, #<OmniAuth::AuthHash SportName="Soccer" SportID="1235">] Token="fake_token" TokenSecret="fake_token" University=#<OmniAuth::AuthHash UniversityName="University"> info=#<OmniAuth::AuthHash::InfoHash> provider="frontrush" uid="coach@coach.edu">
   ```
   
-# Posting to Front Rush
+## Posting to Front Rush
 
 When posting data to Front Rush, you will post to the below address and include your consumer_key and oauth_token
   ```
   url = https://frontrush.com/FRConnectServices/athlete/recruit/send/profile?oauth_consumer_key='+ENV['consumer_key']+'&oauth_token='+session[:token]
   ```
-  # example.rb
+  ### example.rb
   
   ```
   def post_json_to_frontrush(json_data)
